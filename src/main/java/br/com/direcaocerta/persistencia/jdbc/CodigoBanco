@@ -1,0 +1,42 @@
+-- Table: administrador
+
+-- DROP TABLE administrador;
+
+CREATE TABLE administrador
+(
+  id_administrador serial NOT NULL,
+  nome_administrador character varying(100) NOT NULL,
+  login_administrador character varying(30) NOT NULL,
+  senha_administrador character varying(32) NOT NULL,
+  cpf_administrador character varying(12) NOT NULL,
+  CONSTRAINT administrador_pkey PRIMARY KEY (id_administrador)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE administrador
+  OWNER TO postgres;
+
+  
+  ########################################
+  
+  -- Table: empresas
+
+-- DROP TABLE empresas;
+
+CREATE TABLE empresas
+(
+  nome_empresa character varying(100),
+  cnpj_empresa character varying(18),
+  login_empresa character varying(50),
+  id_empresa serial NOT NULL,
+  senha_empresa character varying(32),
+  telefone_empresa character varying(12),
+  CONSTRAINT empresas_pkey PRIMARY KEY (id_empresa)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE empresas
+  OWNER TO postgres;
+  
