@@ -85,7 +85,7 @@ public class AdministradorDAO {
 	 * @param administrador
 	 */
 	public void salvar(Administrador administrador) {
-		if (administrador.getId_administrador() != null) {
+		if (administrador.getId_administrador() != null && administrador.getId_administrador() != 0) {
 			alterar(administrador);
 		} else {
 			cadastrar(administrador);
