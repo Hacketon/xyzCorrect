@@ -9,7 +9,7 @@ public class TestAdmistradorDAO {
 
 	public static void main(String[] args) {
 
-		//testAutenticar();
+		testAutenticar();
 		//testBuscarTodos();
 		//testBuscarPorId();
 		//testSalvar();
@@ -26,8 +26,8 @@ public class TestAdmistradorDAO {
 
 		Administrador administrador = new Administrador();
 
-		administrador.setLogin_administrador("Raulzito");
-		administrador.setSenha_administrador("666");
+		administrador.setLogin_administrador("jj");
+		administrador.setSenha_administrador("123");
 
 		Administrador adminRetorno = administradorDAO.autenticar(administrador);
 
