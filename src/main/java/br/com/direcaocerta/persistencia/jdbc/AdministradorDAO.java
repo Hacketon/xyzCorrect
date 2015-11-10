@@ -20,7 +20,7 @@ public class AdministradorDAO {
 	
 	public void cadastrar(Administrador administrador) {
 
-		String sql = "insert into administrador(nome_administrador, login_administrador, senha_administrador, cpf_administrador) values (?,?,?,?)";
+		String sql = "insert into administrador(nome_administrador, login_administrador, senha_administrador, cpf_administrador) values (?,?,?,md5(?))";
 
 		try (PreparedStatement preparador = con.prepareStatement(sql)) {
 
@@ -44,7 +44,7 @@ public class AdministradorDAO {
 	
 	public void alterar(Administrador administrador) {
 
-		String sql = "update administrador set nome_administrador = ?, login_administrador=?, senha_administrador=?, cpf_administrador=? where id_administrador=?";
+		String sql = "update administrador set nome_administrador = ?, login_administrador=?, senha_administrador=md5(?), cpf_administrador=? where id_administrador=?";
 
 		try (PreparedStatement preparador = con.prepareStatement(sql)) {
 			// substitui as interrogaçoes pelos dados
@@ -111,9 +111,9 @@ public class AdministradorDAO {
 			ResultSet resultado = preparador.executeQuery();
 
 			// posicionando o cursor no primeiro registro
+			Administrador administrador = new Administrador();
 			if (resultado.next()) {
-				Administrador administrador = new Administrador();
-
+				
 				administrador.setId_administrador(resultado
 						.getInt("id_administrador"));
 				administrador.setNome_administrador(resultado
@@ -185,7 +185,7 @@ public class AdministradorDAO {
 	
 	public Administrador autenticar(Administrador adminConsulta) {
 
-		String sql = "Select *from administrador where login_administrador = ? and senha_administrador=?";
+		String sql = "Select *from administrador where login_administrador = ? and senha_administrador=md5(?)";
 
 		try (PreparedStatement preparador = con.prepareStatement(sql)) {
 

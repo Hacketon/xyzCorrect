@@ -9,30 +9,31 @@ public class TestAdmistradorDAO {
 
 	public static void main(String[] args) {
 
-		testAutenticar();
+		//testAutenticar();
 		//testBuscarTodos();
 		//testBuscarPorId();
 		//testSalvar();
-		//testCadastrar();
+		testCadastrar();
 		//testAlterar();
 		//testExcluir();
 	}
 
 	
-	private static void testAutenticar() {
+	private static Administrador testAutenticar() {
 		// TODO Auto-generated method stub
 
 		AdministradorDAO administradorDAO = new AdministradorDAO();
 
 		Administrador administrador = new Administrador();
 
-		administrador.setLogin_administrador("jj");
-		administrador.setSenha_administrador("123");
+		administrador.setLogin_administrador("teste2");
+		administrador.setSenha_administrador("teste2");
 
 		Administrador adminRetorno = administradorDAO.autenticar(administrador);
 
 		System.out.println(adminRetorno);
 
+		return adminRetorno;
 	}
 
 	private static void testBuscarPorId() {
@@ -57,9 +58,9 @@ public class TestAdmistradorDAO {
 	public static void testCadastrar() {
 		Administrador administrador = new Administrador();
 		// Criando o administrador
-		administrador.setNome_administrador("ValLove");
-		administrador.setLogin_administrador("vallove@hotmail.com");
-		administrador.setSenha_administrador("lovein");
+		administrador.setNome_administrador("wilsonCarlos");
+		administrador.setLogin_administrador("wilsonCarlos");
+		administrador.setSenha_administrador("123456");
 		administrador.setCpf_administrador("12345678910");
 
 		AdministradorDAO administradorDao = new AdministradorDAO();
@@ -72,9 +73,9 @@ public class TestAdmistradorDAO {
 		Administrador administrador = new Administrador();
 		// Criando o administrador
 		administrador.setId_administrador(13);
-		administrador.setNome_administrador("Valdileide");
-		administrador.setLogin_administrador("VAlTopada@test.com");
-		administrador.setSenha_administrador("Gostosa");
+		administrador.setNome_administrador("vv	");
+		administrador.setLogin_administrador("VATeste");
+		administrador.setSenha_administrador("Go");
 		administrador.setCpf_administrador("12345678910");
 
 		AdministradorDAO administradorDao = new AdministradorDAO();
